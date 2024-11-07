@@ -1,0 +1,295 @@
+body {
+    background-color: #ffe4e1; /* Misty Rose */
+    font-family: 'Pacifico', cursive;
+    color: #ff69b4; /* Hot Pink */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 182, 193, 0.8);
+    border-bottom: 5px solid #ff69b4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #ff69b4; /* Hot Pink */
+    padding: 10px;
+    border-bottom: 3px solid #ff1493; /* Deep Pink */
+}
+
+nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+    display: inline-block; /* Ensure links are inline */
+}
+
+nav a:hover {
+    color: #dda0dd; /* Plum */
+}
+
+.content {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.categories {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.categories a {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #ff69b4; /* Hot Pink */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.categories a:hover {
+    background-color: #ff1493; /* Deep Pink */
+}
+
+.product {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 2px solid #ff69b4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product p {
+    margin: 5px 0;
+}
+
+button {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff1493;
+}
+
+/* Contact Section */
+footer {
+    background-color: #ff69b4; /* Hot Pink */
+    padding: 20px;
+    text-align: center;
+    color: white;
+    border-top: 5px solid #ff1493; /* Deep Pink */
+}
+
+footer h2 {
+    margin-top: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin: 10px 0 5px;
+}
+
+input, textarea {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ff1493; /* Deep Pink */
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #ff1493; /* Deep Pink */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #ff69b4; /* Hot Pink */
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #ffe4e1; /* Misty Rose */
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #ff69b4;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.close {
+    color: #ff69b4;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #ff1493;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-content label {
+    margin: 10px 0 5px;
+}
+
+.modal-content input, .modal-content textarea {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ff1493; /* Deep Pink */
+    border-radius: 5px;
+}
+
+.modal-content button {
+    background-color: #ff1493; /* Deep Pink */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+    background-color: #ff69b4; /* Hot Pink */
+}
+
+
+/* Add this CSS to your existing styles */
+input::placeholder {
+    color: transparent;
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    }
+
+    nav a {
+        margin: 10px 5px; /* Adjusted margin for better spacing */
+    }
+
+    .categories {
+        flex-direction: column;
+    }
+
+    .categories a {
+        margin: 5px 0;
+    }
+
+    .product {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .product img {
+        width: 100%;
+    }
+
+    .modal-content {
+        width: 90%;
+        margin: 20% auto;
+    }
+
+    .modal-content input, .modal-content textarea {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    nav a {
+        font-size: 1em;
+    }
+
+    .content {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .product {
+        padding: 5px;
+    }
+
+    button {
+        padding: 5px 10px;
+    }
+
+    .modal-content {
+        width: 90%;
+        margin: 20% auto;
+    }
+
+    .modal-content input, .modal-content textarea {
+        width: 90%;
+    }
+}

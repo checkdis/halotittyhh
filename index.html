@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Titty Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="icon.png" type="image/png">
+    <style>
+        /* Add CSS for the image animation */
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(10deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-10deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        .animated-image {
+            width: 150px; /* Adjust the size as needed */
+            animation: rotate 3s infinite;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Hello titty Store!</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="content">
+        <h2>How to Shop</h2>
+        <img src="Screenshot_2024-08-17_011156-removebg-preview.png" alt="Shopping Guide" class="animated-image">
+        <ol>
+            <li>Browse our <a href="shop.html">Shop</a> to find your favorite Hello Kitty products.</li>
+            <li>Click on the product you like to view more details.</li>
+            <li>Click the "Buy" button to add the product to your order.</li>
+            <li>Fill out the order form with your details and submit it.</li>
+            <li>Wait for a confirmation  <strong>call</strong> with your order details.</li>
+            <li>Your order will be processed and shipped to your address.</li>
+        </ol>
+    </div>
+    <!-- Contact Section -->
+    <footer id="contact">
+        <h2>Contact Us</h2>
+        <form action="sendtext.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </footer>
+
+    <!-- Modal Structure -->
+    <div id="buyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h2 id="modalProductName">Order Details</h2>
+            <form action="sendtext.php" method="post">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" pattern="\d{10}" placeholder="0611223344" required>
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" required></textarea>
+                <input type="hidden" id="productName" name="productName">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal(productName) {
+            document.getElementById('productName').value = productName;
+            document.getElementById('modalProductName').innerText = productName + " - Order Details";
+            document.getElementById('buyModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('buyModal').style.display = 'none';
+        }
+
+        document.getElementById('phone').addEventListener('focus', function() {
+            if (this.value === '0611223344') {
+                this.value = '';
+            }
+        });
+
+        document.getElementById('phone').addEventListener('blur', function() {
+            if (this.value === '') {
+                this.value = '0611223344';
+            }
+        });
+
+        document.querySelector('nav a[href="#contact"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
